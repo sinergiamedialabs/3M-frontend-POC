@@ -1,0 +1,79 @@
+<div id="div1">
+    <form [formGroup]="form">
+        <mat-card class="main-div">
+
+            <mat-form-field style="width: 100%;" appearance="fill">
+                <mat-label>Type Of Sign</mat-label>
+                <mat-select formControlName="sign" (selectionChange)="signvalues()">
+                    <mat-option *ngFor="let sign of signTypes" [value]="sign">{{sign}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <br>
+            <mat-form-field style="width: 100%;" appearance="fill">
+                <mat-label>Category of Road</mat-label>
+                <mat-select formControlName="road">
+                    <mat-option *ngFor="let road of roadCategory" [value]="road">{{road}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <br>
+            <mat-form-field style="width: 100%;" appearance="fill">
+                <mat-label>Design Speed</mat-label>
+                <mat-select formControlName="speed">
+                    <mat-option *ngFor="let speed of designSpeed" [value]="speed">{{speed}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <br>
+            <mat-form-field style="width: 100%;" appearance="fill">
+                <mat-label>Design Style</mat-label>
+                <mat-select formControlName="style">
+                    <mat-option *ngFor="let style of designStyle" [value]="style">{{style}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <br>
+            <mat-form-field style="width: 100%;" appearance="fill">
+                <mat-label>No of Destinations</mat-label>
+                <mat-select formControlName="destination">
+                    <mat-option value="1">1</mat-option>
+                    <mat-option [disabled]="!signvalue" value="2">2</mat-option>
+                    <mat-option [disabled]="!signvalue" value="3">3</mat-option>
+                    <mat-option [disabled]="!signvalue" value="4">4</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <br>
+            <mat-form-field style="width: 33.333%;" appearance="fill">
+                <mat-label>Language 1</mat-label>
+                <mat-select formControlName="L1">
+                    <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field style="width: 33.333%;" appearance="fill">
+                <mat-label>Language 2</mat-label>
+                <mat-select formControlName="L2">
+                    <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field style="width: 33.333%;" appearance="fill">
+                <mat-label>Language 3</mat-label>
+                <mat-select formControlName="L3">
+                    <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <br>
+            <button mat-flat-button color="primary" [disabled]="!form.valid" (click)="Next()">NEXT</button>
+
+        </mat-card>
+
+    </form>
+</div>
+
+
+
+<div id="div2">
+    <div class="center">Sign Board!</div>
+</div>

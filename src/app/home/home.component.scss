@@ -1,0 +1,36 @@
+.main-div {
+    top: 18%;
+    width: 40%;
+    position: absolute;
+    border: 7px solid rgb(90, 17, 97);
+    margin-left: 3.5%;
+
+}
+
+button {
+    margin-left: 80%;
+}
+
+
+#div1 {
+    width: 50%;
+    float: left;
+    height: 900px;
+}
+
+#div2 {
+    width: 50%;
+    float: right;
+    height: 900px;
+    background-color: rgb(90, 17, 97);
+}
+
+
+.center {
+    color: white;
+    text-align: center;
+    font-size: 500%;
+    font-style: italic;
+    margin-top: 40%;
+    position: relative;
+}

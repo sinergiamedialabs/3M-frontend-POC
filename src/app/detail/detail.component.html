@@ -1,0 +1,146 @@
+<div id="div3">
+    <form [formGroup]="form1">
+        <mat-card class="main-div">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                <!-- place Column -->
+                <ng-container matColumnDef="demo-place">
+                    <th mat-header-cell *matHeaderCellDef> PLACE </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div *ngIf="cell1">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="place1">
+                            </mat-form-field>
+                        </div>
+                        <br>
+                        <div *ngIf="cell2">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="place2">
+                            </mat-form-field>
+                        </div>
+                        <br>
+                        <div *ngIf="cell3">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="place3">
+                            </mat-form-field>
+                        </div>
+                        <br>
+                        <div *ngIf="cell4">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="place4">
+                            </mat-form-field>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <!-- direction Column -->
+                <ng-container matColumnDef="demo-direction">
+                    <th mat-header-cell *matHeaderCellDef> DIRECTION </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div *ngIf="cell1">
+                            <mat-form-field style="width: 100%;" appearance="fill">
+                                <mat-label>SELECT</mat-label>
+                                <mat-select formControlName="direction1">
+                                    <mat-option value="LEFT">LEFT</mat-option>
+                                    <mat-option value="RIGHT">RIGHT</mat-option>
+                                    <mat-option value="FORWARD">FORWARD</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div><br>
+                        <div *ngIf="cell2">
+                            <mat-form-field style="width: 100%;" appearance="fill">
+                                <mat-label>SELECT</mat-label>
+                                <mat-select formControlName="direction2">
+                                    <mat-option value="LEFT">LEFT</mat-option>
+                                    <mat-option value="RIGHT">RIGHT</mat-option>
+                                    <mat-option value="FORWARD">FORWARD</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div><br>
+                        <div *ngIf="cell3">
+                            <mat-form-field style="width: 100%;" appearance="fill">
+                                <mat-label>SELECT</mat-label>
+                                <mat-select formControlName="direction3">
+                                    <mat-option value="LEFT">LEFT</mat-option>
+                                    <mat-option value="RIGHT">RIGHT</mat-option>
+                                    <mat-option value="FORWARD">FORWARD</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div><br>
+                        <div *ngIf="cell4">
+                            <mat-form-field style="width: 100%;" appearance="fill">
+                                <mat-label>SELECT</mat-label>
+                                <mat-select formControlName="direction4">
+                                    <mat-option value="LEFT">LEFT</mat-option>
+                                    <mat-option value="RIGHT">RIGHT</mat-option>
+                                    <mat-option value="FORWARD">FORWARD</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <!--distance Column-->
+                <ng-container matColumnDef="demo-distance">
+                    <th mat-header-cell *matHeaderCellDef> DISTANCE </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div *ngIf="cell1">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="distance1">
+                            </mat-form-field>
+                        </div><br>
+                        <div *ngIf="cell2">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="distance2">
+                            </mat-form-field>
+                        </div><br>
+                        <div *ngIf="cell3">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="distance3">
+                            </mat-form-field>
+                        </div><br>
+                        <div *ngIf="cell4">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input matInput formControlName="distance4">
+                            </mat-form-field>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+
+            <div class="buttonDiv">
+                <button mat-flat-button color="primary" (click)="previous()">PREVIOUS</button>
+                <button mat-flat-button color="primary" (click)="preview()">PREVIEW</button>
+            </div>
+
+
+        </mat-card>
+
+    </form>
+</div>
+
+<div id="div4">
+
+    <div *ngIf="load" id="div5">
+        <div class="center">Sign Board!</div>
+    </div>
+
+    <mat-card class="sub-div" *ngIf="!load">
+        <div id="div6">
+            <img mat-card-image src="https://dxf-proj.herokuapp.com/getpreview/" alt="image">
+        </div>
+        <br>
+        <div id="div7">{{width}} X {{height}}</div>
+        <br>
+        <button mat-flat-button color="primary" class="button" (click)="download()">DOWNLOAD</button>
+    </mat-card>
+
+
+</div>
